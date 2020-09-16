@@ -21,7 +21,7 @@
         <td colspan="2"> Нету студентов</td>
     </tr>
     <tr th:each="student : ${studentList}">
-        <td><a type="button" class="btn btn-success" th:href="@{http://localhost:8787/student?id=student.id}"
+        <td><a type="button" class="btn btn-success" th:href="@{http://localhost:8787/student(id=${student.id})}"
                th:text="${student.name} + ' ' + ${student.surname}"></a></td>
     </tr>
     </tbody>
