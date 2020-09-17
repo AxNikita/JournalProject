@@ -5,12 +5,14 @@ public class StudentModel {
     private String name;
     private String surname;
     private Integer age;
+    private String address;
 
-    public StudentModel(Long id, String name, String surname, Integer age) {
+    public StudentModel(Long id, String name, String surname, Integer age, String address) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.age = age;
+        this.address = address;
     }
 
     public Long getId() {
@@ -45,6 +47,14 @@ public class StudentModel {
         this.age = age;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "StudentModel{" +
@@ -52,6 +62,7 @@ public class StudentModel {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

@@ -7,11 +7,21 @@
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
-<h1>Profiling</h1>
-
-<a type="button" class="btn btn-secondary" th:href="@{http://localhost:8787/student/journal}">Посмотреть журнал
-    студентов</a>
-<a type="button" class="btn btn-secondary" th:href="@{http://localhost:8787/swJournal}">Посмотреть журнал Star Wars</a>
-
+<div class="pos-f-t">
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarToggleExternalContent"
+                aria-controls="navbarToggleExternalContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <a type="button" class="btn btn-secondary" th:href="@{http://localhost:8787/student/journal}">Посмотреть
+                журнал студентов</a>
+            <a type="button" class="btn btn-secondary" th:href="@{http://localhost:8787/swJournal}">Посмотреть журнал
+                Star Wars</a>
+        </button>
+    </nav>
+</div>
 </body>
 </html>

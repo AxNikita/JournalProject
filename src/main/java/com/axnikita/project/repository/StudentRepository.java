@@ -20,11 +20,11 @@ public class StudentRepository {
 
     @PostConstruct
     public void initMethod() {
-        studentList.add(new StudentModel(1L, "Nikita", "Surname1", 19));
-        studentList.add(new StudentModel(2L, "Egor", "Surname2", 20));
-        studentList.add(new StudentModel(3L, "Roma", "Surname3", 21));
-        studentList.add(new StudentModel(4L, "Andrey", "Surname4", 22));
-        studentList.add(new StudentModel(5L, "Alexander", "Surname5", 23));
+        studentList.add(new StudentModel(1L, "Nikita", "Surname1", 19, "st. Abay 10"));
+        studentList.add(new StudentModel(2L, "Egor", "Surname2", 20, "st. Abay 12"));
+        studentList.add(new StudentModel(3L, "Roma", "Surname3", 21, "st. Abay 14"));
+        studentList.add(new StudentModel(4L, "Andrey", "Surname4", 22, "st. Abay 16"));
+        studentList.add(new StudentModel(5L, "Alexander", "Surname5", 23, "st. Abay 18"));
 
         lessonList.add(new LessonModel(1L, "Math"));
         lessonList.add(new LessonModel(2L, "Russian"));
