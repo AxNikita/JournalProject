@@ -6,7 +6,9 @@ import com.axnikita.project.data.model.StudentModel;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -30,11 +32,16 @@ public class StudentRepository {
         lessonList.add(new LessonModel(4L, "Informatika"));
 
         appraisalList.add(new AppraisalModel(1L, 1L, 1L, 5));
-        appraisalList.add(new AppraisalModel(2L, 1L, 2L, 4));
-        appraisalList.add(new AppraisalModel(3L, 1L, 3L, 3));
-        appraisalList.add(new AppraisalModel(4L, 3L, 1L, 5));
-        appraisalList.add(new AppraisalModel(5L, 4L, 2L, 4));
-        appraisalList.add(new AppraisalModel(6L, 5L, 3L, 3));
+        appraisalList.add(new AppraisalModel(2L, 1L, 1L, 5));
+        appraisalList.add(new AppraisalModel(3L, 1L, 1L, 5));
+        appraisalList.add(new AppraisalModel(4L, 1L, 2L, 4));
+        appraisalList.add(new AppraisalModel(5L, 1L, 3L, 3));
+
+        appraisalList.add(new AppraisalModel(6L, 3L, 1L, 5));
+
+        appraisalList.add(new AppraisalModel(7L, 4L, 2L, 4));
+
+        appraisalList.add(new AppraisalModel(8L, 5L, 3L, 3));
     }
 
     public List<StudentModel> getAllStudent() {
