@@ -27,4 +27,15 @@ public class StarWarsComponent {
         return planetList;
     }
 
+    public List<StarWarsPlanetModel> getNextPlanets() {
+
+        List<StarWarsPlanetModel> planetList = new ArrayList<>();
+
+        StarWarsMainModel starWarsData = starWarsRepository.getNextPage(starWarsRepository.getAllStarWarsData().getNext());
+
+        planetList.addAll(starWarsData.getPlanetList());
+
+        return planetList;
+    }
+
 }

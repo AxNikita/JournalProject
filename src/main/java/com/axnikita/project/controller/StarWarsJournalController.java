@@ -8,14 +8,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/starWars")
+@RequestMapping("/starWars/planets")
 public class StarWarsJournalController {
 
     @Autowired
     private StarWarsComponent starWarsComponent;
 
-    @GetMapping("/planets")
-    public String getStarWarsData(Model model) {
+    @GetMapping("/")
+    public String getBasePlanets(Model model) {
+        model.addAttribute("planets", starWarsComponent.getAllPlanets());
+        return "starWarsJournal";
+    }
+
+    @GetMapping("/next")
+    public String getNextPlanets(Model model) {
+        model.addAttribute("planets", starWarsComponent.getAllPlanets());
+        return "starWarsJournal";
+    }
+
+    @GetMapping("/previous")
+    public String getPreviousPlanets(Model model) {
         model.addAttribute("planets", starWarsComponent.getAllPlanets());
         return "starWarsJournal";
     }

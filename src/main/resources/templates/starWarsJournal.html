@@ -7,18 +7,30 @@
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
-
+<div class="pos-f-t">
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarToggleExternalContent"
+                aria-controls="navbarToggleExternalContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <a type="button" class="btn btn-primary" th:href="@{http://localhost:8787/}">&larr; Назад</a>
+            <br/>
+            <h1>Planets</h1>
+        </button>
+    </nav>
+</div>
+<br/>
 <div class="container">
-<!--    <div th:replace="navigation.html :: navigation(Shop)"> </div>-->
-<!--    <h1>Shop</h1>-->
-
     <div class="row" >
         <div class="col-xs-12 col-md-6 col-lg-3" th:each="planet : ${planets}">
             <div class="card">
-                <img class="card-img-top" src="http://placehold.it/250x150" alt="Card image cap">
+<!--                <img class="card-img-top" src="http://placehold.it/250x150" alt="Card image cap">-->
                 <div class="card-block">
                     <h4 class="card-title" th:text="${planet.name}"></h4>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer..</p>
+<!--                    <p class="card-text">Description</p>-->
                 </div>
                 <div class="card-footer">
                     <h5 class="text-muted" th:text="${planet.rotationPeriod}"></h5>
@@ -28,9 +40,28 @@
 <!--                    <a class="btn btn-success btn-lg btn-block" th:href="@{'/basket/add/' + ${product.id}}">Add to basket</a>-->
                 </div>
             </div>
+            <br/>
         </div>
     </div>
 </div>
+
+
+<nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">AxProject</a>
+<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{http://localhost:8787/starWars/planets/next}">&#8594; Следующая страница</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{http://localhost:8787/starWars/planets/previous}">&#8592; Предыдущая страница</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 </body>
 </html>
