@@ -13,28 +13,49 @@ import java.util.List;
 @Component
 public class StarWarsComponent {
 
+    private String nextUrl;
+    private String previousUrl;
+    List<StarWarsPlanetModel> planetList = new ArrayList<>();
+
     @Autowired
     private StarWarsRepository starWarsRepository;
 
-    public List<StarWarsPlanetModel> getAllPlanets() {
+    public StarWarsMainModel getBaseStarWarsData() {
+        return starWarsRepository.getAllStarWarsData();
+    }
 
-        List<StarWarsPlanetModel> planetList = new ArrayList<>();
-
-        StarWarsMainModel starWarsData = starWarsRepository.getAllStarWarsData();
-
+    public List<StarWarsPlanetModel> getBasePlanets() {
+        planetList.clear();
+        StarWarsMainModel starWarsData = getBaseStarWarsData();
+        nextUrl = starWarsData.getNext();
+        previousUrl = starWarsData.getPrevious();
         planetList.addAll(starWarsData.getPlanetList());
+        return planetList;
+    }//http://swapi.dev/api/planets/?page=2
 
+    public List<StarWarsPlanetModel> getNextPlanets() {
+        planetList.clear();
+        if (nextUrl != null) {
+            StarWarsMainModel starWarsData = starWarsRepository.getNextPage(nextUrl.substring(35, 36));
+            nextUrl = starWarsData.getNext();
+            previousUrl = starWarsData.getPrevious();
+            planetList.addAll(starWarsData.getPlanetList());
+        } else {
+            planetList.addAll(getBasePlanets());
+        }
         return planetList;
     }
 
-    public List<StarWarsPlanetModel> getNextPlanets() {
-
-        List<StarWarsPlanetModel> planetList = new ArrayList<>();
-
-        StarWarsMainModel starWarsData = starWarsRepository.getNextPage(starWarsRepository.getAllStarWarsData().getNext());
-
-        planetList.addAll(starWarsData.getPlanetList());
-
+    public List<StarWarsPlanetModel> getPreviousPlanets() {
+        planetList.clear();
+        if (previousUrl != null) {
+            StarWarsMainModel starWarsData = starWarsRepository.getNextPage(previousUrl.substring(35, 36));
+            nextUrl = starWarsData.getNext();
+            previousUrl = starWarsData.getPrevious();
+            planetList.addAll(starWarsData.getPlanetList());
+        } else {
+            planetList.addAll(getBasePlanets());
+        }
         return planetList;
     }
 

@@ -9,7 +9,7 @@ public interface StarWarsApi {
     @RequestLine("GET")
     StarWarsMainModel getStarWarsData();
 
-    @RequestLine("GET/{url}")
+    @RequestLine("GET/?page={url}")
     StarWarsMainModel getNextPage(@Param("url") String url);
 
 }

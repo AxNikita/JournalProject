@@ -19,7 +19,7 @@ public class FeignConfiguration {
                 .encoder(new GsonEncoder())
                 .decoder(new GsonDecoder())
                 .logLevel(Logger.Level.FULL)
-                .target(StarWarsApi.class, "https://swapi.dev/api/planets/");
+                .target(StarWarsApi.class, "https://swapi.dev/api/planets");
     }
 
 }

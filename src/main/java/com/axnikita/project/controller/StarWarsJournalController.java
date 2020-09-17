@@ -14,21 +14,21 @@ public class StarWarsJournalController {
     @Autowired
     private StarWarsComponent starWarsComponent;
 
-    @GetMapping("/")
+    @GetMapping("/base")
     public String getBasePlanets(Model model) {
-        model.addAttribute("planets", starWarsComponent.getAllPlanets());
+        model.addAttribute("planets", starWarsComponent.getBasePlanets());
         return "starWarsJournal";
     }
 
     @GetMapping("/next")
     public String getNextPlanets(Model model) {
-        model.addAttribute("planets", starWarsComponent.getAllPlanets());
+        model.addAttribute("planets", starWarsComponent.getNextPlanets());
         return "starWarsJournal";
     }
 
     @GetMapping("/previous")
     public String getPreviousPlanets(Model model) {
-        model.addAttribute("planets", starWarsComponent.getAllPlanets());
+        model.addAttribute("planets", starWarsComponent.getPreviousPlanets());
         return "starWarsJournal";
     }
 

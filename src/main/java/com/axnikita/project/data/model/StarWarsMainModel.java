@@ -17,7 +17,7 @@ public class StarWarsMainModel {
 
     @SerializedName("previous")
     @Expose
-    private Object previous;
+    private String previous;
 
     @SerializedName("results")
     @Expose
@@ -39,11 +39,11 @@ public class StarWarsMainModel {
         this.next = next;
     }
 
-    public Object getPrevious() {
+    public String getPrevious() {
         return previous;
     }
 
-    public void setPrevious(Object previous) {
+    public void setPrevious(String previous) {
         this.previous = previous;
     }
 
