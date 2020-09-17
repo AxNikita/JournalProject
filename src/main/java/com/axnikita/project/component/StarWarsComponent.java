@@ -31,7 +31,7 @@ public class StarWarsComponent {
         previousUrl = starWarsData.getPrevious();
         planetList.addAll(starWarsData.getPlanetList());
         return planetList;
-    }//http://swapi.dev/api/planets/?page=2
+    }
 
     public List<StarWarsPlanetModel> getNextPlanets() {
         planetList.clear();

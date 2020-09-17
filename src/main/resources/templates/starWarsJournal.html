@@ -23,41 +23,46 @@
     </nav>
 </div>
 <br/>
+
 <div class="container">
-    <div class="row" >
+    <div class="row">
         <div class="col-xs-12 col-md-6 col-lg-3" th:each="planet : ${planets}">
             <div class="card">
-                <img class="card-img-top" src="http://placehold.it/250x150" alt="Card image cap">
+                <!--                <img class="card-img-top" src="http://placehold.it/250x150" alt="Card image cap">-->
+                <img class="card-img-top"
+                     src="https://hi-tech.ua/wp-content/uploads/2019/11/Star-Wars-Jedi-Fallen-Order-cover-615x346.jpg"
+                     alt="Card image cap">
                 <div class="card-block">
                     <h4 class="card-title" th:text="${planet.name}"></h4>
-<!--                    <p class="card-text">Description</p>-->
                 </div>
                 <div class="card-footer">
-                    <h5 class="text-muted" th:text="${planet.rotationPeriod}"></h5>
-                    <h5 class="text-muted" th:text="${planet.orbitalPeriod}"></h5>
-                    <h5 class="text-muted" th:text="${planet.diameter}"></h5>
-<!--                    <a class="btn btn-outline-warning btn-lg btn-block" th:href="@{'/details/' + ${product.id}}">About a product</a>-->
-<!--                    <a class="btn btn-success btn-lg btn-block" th:href="@{'/basket/add/' + ${product.id}}">Add to basket</a>-->
+                    <h5 class="text-muted" th:text="'Rotation period = ' + ${planet.rotationPeriod}"></h5>
+                    <h5 class="text-muted" th:text="'Orbital period = ' + ${planet.orbitalPeriod}"></h5>
+                    <h5 class="text-muted" th:text="'Diameter = '+ ${planet.diameter}"></h5>
+                    <h5 class="text-muted" th:text="'Climate = ' + ${planet.climate}"></h5>
+                    <h5 class="text-muted" th:text="'Gravity = ' + ${planet.gravity}"></h5>
+                    <h5 class="text-muted" th:text="'Terrain = ' + ${planet.terrain}"></h5>
+                    <h5 class="text-muted" th:text="'Surface water = ' + ${planet.surfaceWater}"></h5>
+                    <h5 class="text-muted" th:text="'Population = ' + ${planet.population}"></h5>
                 </div>
             </div>
             <br/>
         </div>
     </div>
 </div>
-
+<br/>
 
 <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">AxProject</a>
-<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--        <span class="navbar-toggler-icon"></span>-->
-<!--    </button>-->
+    <a class="navbar-brand" href="https://axnikita.github.io/">AxProject</a>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a type="button" class="btn btn-secondary" th:href="@{http://localhost:8787/starWars/planets/previous}">&#8592; Предыдущая страница</a>
+            <li class="nav-item active" style="margin-right:20px">
+                <a type="button" class="btn btn-secondary" th:href="@{http://localhost:8787/starWars/planets/previous}">&#8592;
+                    Предыдущая страница</a>
             </li>
             <li class="nav-item active">
-                <a type="button" class="btn btn-secondary" th:href="@{http://localhost:8787/starWars/planets/next}">Следующая страница &#8594;</a>
+                <a type="button" class="btn btn-secondary" th:href="@{http://localhost:8787/starWars/planets/next}">Следующая
+                    страница &#8594;</a>
             </li>
         </ul>
     </div>
