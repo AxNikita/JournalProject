@@ -48,7 +48,16 @@ public class StudentRepository {
             }
         }
         return null;
+    }
 
+    public List<AppraisalModel> getAllAppraisalByStudentId(Long id) {
+        List<AppraisalModel> appraisalModelList = new ArrayList<>();
+        for (AppraisalModel appraisal : appraisalList) {
+            if (appraisal.getStudentId().equals(id)) {
+                appraisalModelList.add(appraisal);
+            }
+        }
+        return appraisalModelList;
     }
 
 }
