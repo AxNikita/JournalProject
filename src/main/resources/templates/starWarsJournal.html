@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars Journal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+<!--    <div th:replace="navigation.html :: navigation(Shop)"> </div>-->
+<!--    <h1>Shop</h1>-->
+
+    <div class="row" >
+        <div class="col-xs-12 col-md-6 col-lg-3" th:each="planet : ${planets}">
+            <div class="card">
+                <img class="card-img-top" src="http://placehold.it/250x150" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title" th:text="${planet.name}"></h4>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer..</p>
+                </div>
+                <div class="card-footer">
+                    <h5 class="text-muted" th:text="${planet.rotationPeriod}"></h5>
+                    <h5 class="text-muted" th:text="${planet.orbitalPeriod}"></h5>
+                    <h5 class="text-muted" th:text="${planet.diameter}"></h5>
+<!--                    <a class="btn btn-outline-warning btn-lg btn-block" th:href="@{'/details/' + ${product.id}}">About a product</a>-->
+<!--                    <a class="btn btn-success btn-lg btn-block" th:href="@{'/basket/add/' + ${product.id}}">Add to basket</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -21,7 +21,7 @@ public class StarWarsMainModel {
 
     @SerializedName("results")
     @Expose
-    private List<PlanetModel> planetList;
+    private List<StarWarsPlanetModel> planetList;
 
     public Integer getCount() {
         return count;
@@ -47,11 +47,11 @@ public class StarWarsMainModel {
         this.previous = previous;
     }
 
-    public List<PlanetModel> getPlanetList() {
+    public List<StarWarsPlanetModel> getPlanetList() {
         return planetList;
     }
 
-    public void setPlanetList(List<PlanetModel> planetList) {
+    public void setPlanetList(List<StarWarsPlanetModel> planetList) {
         this.planetList = planetList;
     }
 

@@ -1,7 +1,7 @@
 package com.axnikita.project.repository;
 
 import com.axnikita.project.data.model.StarWarsMainModel;
-import com.axnikita.project.service.SWApi;
+import com.axnikita.project.service.StarWarsApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,10 +9,14 @@ import org.springframework.stereotype.Component;
 public class StarWarsRepository {
 
     @Autowired
-    private SWApi swApi;
+    private StarWarsApi starWarsApi;
 
     public StarWarsMainModel getAllStarWarsData() {
-        return swApi.getStarWarsData();
+        return starWarsApi.getStarWarsData();
+    }
+
+    public StarWarsMainModel getNextPage(String url) {
+        return starWarsApi.getNextPage(url);
     }
 
 }
