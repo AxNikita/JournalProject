@@ -24,6 +24,8 @@ public class StudentJournalController {
     @GetMapping
     public String getStudentById(@RequestParam Long id, Model model) {
         model.addAttribute("student", studentJournalComponent.getStudentById(id));
+        model.addAttribute("appraisals", studentJournalComponent.getAllAppraisalByStudentId(id));
+        model.addAttribute("lessons", studentJournalComponent.getAllLessons());
         return "personalStudent";
     }
 

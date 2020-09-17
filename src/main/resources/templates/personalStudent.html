@@ -8,5 +8,29 @@
 </head>
 <body>
 <h1 th:text="${student.name} + ' ' + ${student.surname}"></h1>
+
+<table>
+    <thead>
+    <tr>
+        <th> Предмет</th>
+        <th> Оценки </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${lessons.empty}">
+        <td colspan="2"> Нету Оценок</td>
+    </tr>
+
+    <tr th:each="lesson : ${lessons}">
+        <td><a class="list-group-item list-group-item-action" th:href="@{http://localhost:8787/}"
+               th:text="${lesson.description}"></a></td>
+    </tr>
+
+    <tr th:each="appraisal : ${appraisals}">
+        <td><a class="list-group-item list-group-item-action" th:href="@{http://localhost:8787/}"
+               th:text="${appraisal.value}"></a></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

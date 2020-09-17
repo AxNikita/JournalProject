@@ -24,10 +24,10 @@ public class StudentRepository {
         studentList.add(new StudentModel(4L, "Andrey", "Surname4", 22));
         studentList.add(new StudentModel(5L, "Alexander", "Surname5", 23));
 
-        lessonList.add(new LessonModel(1L, "Математика"));
-        lessonList.add(new LessonModel(2L, "Русский"));
-        lessonList.add(new LessonModel(3L, "История"));
-        lessonList.add(new LessonModel(4L, "Информатика"));
+        lessonList.add(new LessonModel(1L, "Math"));
+        lessonList.add(new LessonModel(2L, "Russian"));
+        lessonList.add(new LessonModel(3L, "History"));
+        lessonList.add(new LessonModel(4L, "Informatika"));
 
         appraisalList.add(new AppraisalModel(1L, 1L, 1L, 5));
         appraisalList.add(new AppraisalModel(2L, 1L, 2L, 4));
@@ -58,6 +58,10 @@ public class StudentRepository {
             }
         }
         return appraisalModelList;
+    }
+
+    public List<LessonModel> getAllLessons() {
+        return lessonList;
     }
 
 }
